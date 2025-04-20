@@ -1,0 +1,54 @@
+# ===== 공통 무시 =====
+.DS_Store
+*.log
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+bin/
+.classpath
+.project
+.settings/
+.factorypath
+.springBeans
+.sts4-cache
+
+# ===== Node.js (Vue) 관련 =====
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/*.local
+
+# ===== Gradle (Spring Boot) 관련 =====
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+**/application.yml
+
+# ===== Eclipse / STS =====
+.apt_generated
+
+# ===== NetBeans =====
+**/nbproject/private/
+**/nbbuild/
+**/dist/
+**/nbdist/
+**/.nb-gradle/
+
+# ===== 로그 파일들 =====
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
