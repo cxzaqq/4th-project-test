@@ -5,12 +5,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: boot001kube
+      app: boot002kube
   # replicas: 3
   template:
     metadata:
       labels:
-        app: boot001kube
+        app: boot002kube
     spec:
       containers:
       - name: boot-container

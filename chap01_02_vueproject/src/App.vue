@@ -25,46 +25,19 @@ const sendPlus = async () => {
 
         /* 이후 코드는 POST 요청 및 body 활용(백엔드 수정됨) */
         // `http://localhost:5173/api/plus`,
-        // {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json;charset=utf-8",
-        //     },
-        //     body: JSON.stringify({ num1: num1.value, num2: num2.value }),
-        // },
 
         /* 3. 백엔드에서 cors, 프론트에서 X (백, 프론트 둘 다 컨테이너화 이후) */
         // `http://localhost:8055/plus`,
-        // {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json;charset=utf-8",
-        //     },
-        //     body: JSON.stringify({ num1: num1.value, num2: num2.value }),
-        // }
 
         /* 4. 백엔드에서 x, 프론트에서 cors(docker compose를 활용해 네트워크로 통신, 둘 다 컨테이너) */
         // `http://localhost:8011/api/plus`,
-        // {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json;charset=utf-8",
-        //     },
-        //     body: JSON.stringify({ num1: num1.value, num2: num2.value }),
-        // }
 
         // /* 5. 백엔드에서 cors, 프론트에서 x(kubernetes의 백엔드 워커노드로 요청) */
         // `http://localhost:30001/plus`,
-        // {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json;charset=utf-8",
-        //     },
-        //     body: JSON.stringify({ num1: num1.value, num2: num2.value }),
-        // }
 
-        /* 6. 백, 프론트 X (kubernetes의 ingress 추가 후후) */
+        /* 6. 백, 프론트 X (kubernetes의 ingress 추가 후) */
         `/boot/plus`,
+        
         {
             method: "POST",
             headers: {
