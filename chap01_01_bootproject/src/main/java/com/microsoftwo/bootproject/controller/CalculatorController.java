@@ -1,0 +1,53 @@
+package com.microsoftwo.bootproject.controller;
+
+import com.microsoftwo.bootproject.dto.CalculatorDTO;
+import com.microsoftwo.bootproject.service.CalculatorService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@Slf4j
+public class CalculatorController {
+
+    private final CalculatorService calculatorService;
+
+    @Autowired
+    public CalculatorController(final CalculatorService calculatorService) {
+        this.calculatorService = calculatorService;
+    }
+
+    @GetMapping("/health")
+    public String healthCheck() {
+        return "I'm alive";
+    }
+
+//    @GetMapping("/plus")
+//    public ResponseEntity<CalculatorDTO> plusTwoNumbers(CalculatorDTO calculatorDTO) {
+//
+//        log.info("calculatorDTO: {}", calculatorDTO);
+//        int result = calculatorService.plusTwoNumbers(calculatorDTO);
+//        calculatorDTO.setSum(result);
+//
+//        return ResponseEntity
+//                .ok()
+//                .body(calculatorDTO);
+//    }
+
+    @PostMapping("/plus")
+    public ResponseEntity<CalculatorDTO> plusTwoNumbers(@RequestBody CalculatorDTO calculatorDTO) {
+
+        log.info("calculatorDTO: {}", calculatorDTO);
+        int result = calculatorService.plusTwoNumbers(calculatorDTO);
+        calculatorDTO.setSum(result);
+
+        return ResponseEntity
+                .ok()
+                .body(calculatorDTO);
+    }
+
+}

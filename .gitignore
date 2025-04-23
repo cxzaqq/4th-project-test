@@ -26,8 +26,10 @@ bin/
 **/dist/
 **/dist-ssr/
 **/*.local
+**/.vscode
 
 # ===== Gradle (Spring Boot) 관련 =====
+**/gradle
 .gradle/
 build/
 !gradle/wrapper/gradle-wrapper.jar
