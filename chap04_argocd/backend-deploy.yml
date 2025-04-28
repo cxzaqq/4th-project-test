@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-boot-dep
+spec:
+  selector:
+    matchLabels:
+      app: bootdep
+  # replicas: 3
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: bootdep
+    spec:
+      containers:
+      - name: boot-container
+        image: ys0915/argo_boot:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 7777

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-vue-dep
+spec:
+  selector:
+    matchLabels:
+      app: vuedep
+  template:
+    metadata:
+      labels:
+        app: vuedep
+    spec:
+      containers:
+      - name: vue-container
+        image: ys0915/argo_vue:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80      # 5173이 아니라 80으로 바꿔야 한다.
